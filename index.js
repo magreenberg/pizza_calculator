@@ -1,6 +1,6 @@
 var express = require('express')
 var bodyParser = require('body-parser')
-var slices_per_pizza = 1;
+var slices_per_pizza = 1; // personal size
 
 var app = express()
 
