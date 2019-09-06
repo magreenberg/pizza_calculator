@@ -10,6 +10,7 @@ app.listen(8080, function(){
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static('images'));
 
 app.set('view engine', 'ejs');
 
@@ -29,9 +30,9 @@ app.get('/calculate', function(request, response) {
     } else {
     	var tot_slices = hungry_engineers * slices;
     	var tot_pizzas = tot_slices / slices_per_pizza
-    	
+
         var answer = 'For ' + (hungry_engineers).toString() + ' hungry engineers order ' + (tot_pizzas).toString() + ' pizzas.';
-        
+
         response.send(answer.fontsize(20));
     }
 })
